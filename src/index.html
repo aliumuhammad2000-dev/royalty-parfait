@@ -29,14 +29,23 @@
           <span class="absolute top-0 right-0 bg-black text-white text-sm w-4 h-4 rounded-full flex items-center justify-center">0</span>
         </button>
 
-        <button class="md:hidden p-2 text-gray-800">
+        <button class="md:hidden p-2 text-gray-800 cursor-pointer" id="menu-btn">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
-
       </button>
       </div>
     </div>
+
+    <div class="hidden md:hidden bg-white border-t border-gray-100" id="mobile-menu" >
+      <ul class="flex flex-col p-4 space-y-4 text-sm font-medium uppercase tracking-widest text-gray-600">
+        <li><a href="#" class="block hover:text-black">Home</a></li>
+        <li><a href="#" class="block hover:text-black">Menu</a></li>
+        <li><a href="#" class="block hover:text-black">About</a></li>
+      </ul>
+    </div>
   </nav>
+
+  <script type="module" src="index.js"></script>
 </body>
 </html>
