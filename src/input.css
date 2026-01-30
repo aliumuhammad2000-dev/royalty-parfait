@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@layer components {
+    .card {
+        @apply flex flex-col border border-transparent rounded-b-2xl shadow-2xl transform scale-90 transition-transform hover:scale-100 
+    }
+}
