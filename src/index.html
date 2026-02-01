@@ -51,7 +51,7 @@
             <span class="text-2xl ml-2.5 font-bold">&#8358;0</span>
           </div>
           <button class="block px-2.5 py-3 bg-orange-500 border-0 rounded-2xl text-lg text-white mt-5 my-auto mb-0 cursor-pointer">Buy Now</button>
-          <svg id="cart-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 absolute top-20 right-15 cursor-pointer">
+          <svg id="cart-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 absolute top-0 right-15 cursor-pointer">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>
         </div>
@@ -64,7 +64,11 @@
       </div>
     </div>
 
-    <div class="hidden md:hidden bg-white border-t border-gray-100" id="mobile-menu" >
+    <div style="background-image: url(/images/images\ \(3\).jpg);
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;"
+     class="hidden md:hidden bg-white border-t border-gray-100" id="mobile-menu" >
       <ul class="flex flex-col p-4 space-y-4 text-sm font-medium uppercase tracking-widest text-gray-600">
         <li><a href="#" class="block hover:text-black">Home</a></li>
         <li><a href="#" class="block hover:text-black">Menu</a></li>
@@ -88,7 +92,7 @@
     </div>
   </section>
   <!--Main Section-->
-  <main class="grid grid-cols-2 m-10 md:grid-cols-4 gap-1">
+  <main class="grid grid-cols-2 m-10 md:grid-cols-4 gap-1" id="js-products">
     <div class="card">
       <div class="aspect-square w-full">
         <img class="w-full h-full object-cover" src="/images/strawberry & blueberry.jpg" alt="strawberry & blueberry">
@@ -97,7 +101,7 @@
         <p class="text-sm font-serif font-medium tracking-tighter uppercase min-h-3.5 line-clamp-2">Strawberry & Blueberry</p>
         <div class="mt-auto pt-6">
           <span class="block font-medium"> &#8358;5200</span>
-          <button class="text-sm bg-gray-600 px-3 py-1.5 text-white rounded-full mt-4 cursor-pointer transition ease-in-out duration-300 hover:bg-gray-700">Add to Cart</button>
+          <button class="text-sm bg-gray-600 px-3 py-1.5 text-white rounded-full mt-4 cursor-pointer transition ease-in-out duration-300 hover:bg-gray-700" id="add-to-cart-btn">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -281,6 +285,7 @@
     </div>
   </footer>
   
-  <script type="module" src="index.js"></script>
+  <script type="module" src="/data/products.js"></script>
+  <script type="module" src="/scripts/index.js"></script>
 </body>
 </html>
