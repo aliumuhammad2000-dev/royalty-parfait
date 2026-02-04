@@ -1,4 +1,4 @@
-const products = [{
+export const products = [{
   image: '/images/strawberry & blueberry.jpg',
   name: 'Strawberry & Blueberry',
   price: 5200
@@ -27,7 +27,7 @@ const products = [{
   name: 'granola',
   price: 4500
 }, {
-  image: '/image/greek yogurt.jpg',
+  image: '/images/greek yogurt.jpg',
   name: 'greek yogurt',
   price: 3000
 }, {
@@ -43,11 +43,7 @@ const products = [{
   name: 'mango',
   price: 4000
 }, {
-  image: '/images/strawberry & blueberry.jpg',
-  name: 'strawberry & blueberry',
-  price: 5200
-}, {
-  image: '/images/yogurt,blue&raspberry and grano.jpg',
+  image: '/images/yogurt, blue&raspberry and grano.jpg',
   name: 'yogurt,blue&raspberry and granola',
   price: 6500
 }];
