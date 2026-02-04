@@ -1,4 +1,5 @@
 import { products } from "../data/products.js";
+import { cart } from "../data/cart.js";
 
 const menuBtn = document.getElementById('menu-btn');
 const navMenu = document.getElementById('mobile-menu');
@@ -30,7 +31,7 @@ products.forEach((product) => {
         <p class="text-sm font-serif font-medium tracking-tighter uppercase min-h-3.5 line-clamp-2">${product.name}</p>
         <div class="mt-auto pt-6">
           <span class="block font-medium"> &#8358;${product.price}</span>
-          <button class="text-sm bg-gray-600 px-3 py-1.5 text-white rounded-full mt-4 cursor-pointer transition ease-in-out duration-300 hover:bg-gray-700" id="add-to-cart-btn">Add to Cart</button>
+          <button class="text-sm bg-gray-600 px-3 py-1.5 text-white rounded-full mt-4 cursor-pointer transition ease-in-out duration-300 hover:bg-gray-700" id="add-to-cart-btn" data-product-id="${product.id}">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -39,4 +40,26 @@ products.forEach((product) => {
 
 document.querySelector('#js-products').innerHTML = productsHTML;
 
+// ADD TO CART //
+document.querySelectorAll('#add-to-cart-btn').forEach((button) => {
+    button.addEventListener('click', () => {
+        const productId = button.dataset.productId;
 
+        let matchingItem;
+
+        cart.forEach((item) => {
+            if (productId === item.productId) {
+                matchingItem = item;
+            }
+        });
+
+        if (matchingItem) {
+            matchingItem.quantity += 1;
+        } else {
+            cart.push({
+                productId: productId,
+                quantity: 1
+            });
+        }
+    });
+});
