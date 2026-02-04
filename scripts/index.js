@@ -61,5 +61,18 @@ document.querySelectorAll('#add-to-cart-btn').forEach((button) => {
                 quantity: 1
             });
         }
+
+        let cartQuantity = 0;
+
+        cart.forEach((item) => {
+            cartQuantity += item.quantity;
+        });
+        
+        const badge = document.getElementById('js-cart-quantity');
+        document.querySelector('#js-cart-quantity').innerHTML = cartQuantity;
+
+        if (cartQuantity > 0) {
+            badge.classList.remove('hidden');
+        }
     });
 });
