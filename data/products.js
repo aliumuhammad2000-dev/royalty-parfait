@@ -1,3 +1,14 @@
+export function getProduct(productId) {
+  let matchingProduct;
+
+  products.forEach((product) => {
+      if (product.id === productId) {
+          matchingProduct = product;
+      }
+  });
+ return matchingProduct; 
+}
+
 export const products = [{
   id: 'pd1',
   image: '/images/strawberry & blueberry.jpg',
