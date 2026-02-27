@@ -7,6 +7,23 @@ function saveToStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+export function updateCartQuantity () {
+    let cartQuantity = 0;
+
+    cart.forEach((cartItem) => {
+        cartQuantity += cartItem.quantity;
+    });
+    
+    const badge = document.getElementById('js-cart-quantity');
+    badge.innerHTML = cartQuantity;
+
+    if (cartQuantity > 0) {
+        badge.classList.remove('hidden');
+    } else {
+        badge.classList.add('hidden');
+    }
+}
+
  export function addToCart(productId) {
     let matchingItem;
 
@@ -39,5 +56,27 @@ export function removeFromCart (productId) {
 
     cart = newCart;
 
+    saveToStorage();
+}
+
+export function increaseQuantity(productId) {
+    cart.forEach((cartItem) => {
+        if (cartItem.productId === productId) {
+            cartItem.quantity += 1;
+        }
+    });
+    saveToStorage();
+}
+
+export function decreaseQuantity(productId) {
+    cart.forEach((cartItem) => {
+        if (cartItem.productId === productId) {
+            cartItem.quantity -= 1;
+
+            if (cartItem.quantity === 0) {
+                removeFromCart(productId);
+            }
+        }
+    });
     saveToStorage();
 }
